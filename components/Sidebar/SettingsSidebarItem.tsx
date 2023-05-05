@@ -22,10 +22,10 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
                     height={25}
                     width={25}
                     src={icon}
-                    className="rounded-full w-[17px] h-[17px] ml-[14px] my-auto"
+                    className="rounded-full w-[17px] invert h-[17px] ml-[14px] my-auto"
                 />
                 <span
-                    className="my-auto mx-[10px] leading-5 text-gray text-[0.875rem]"
+                    className="my-auto mx-[10px] leading-5 text-gray text-sm font-medium"
                 >
                     {name}
                 </span>

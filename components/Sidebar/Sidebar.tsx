@@ -27,12 +27,12 @@ const Sidebar = (props: Props) => {
                         onClick={() => {
                             router.back()
                         }}
-                        className="w-full mb-[26px] h-[24px] flex px-[24px] my-auto text-[0.875rem] text-gray hover:bg-black/25">
+                        className="w-full mb-[26px] h-[24px] flex px-[24px] my-auto items-center justify-start text-[0.875rem] text-gray hover:bg-black/25">
                         <BiLeftArrowAlt
                             className="my-auto"
                             fontSize={20}
                         />
-                        <span className="mx-1  my-auto">
+                        <span className="mx-6 font-semibold">
                             Back
                         </span>
                     </button>)
