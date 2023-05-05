@@ -1,3 +1,4 @@
+import React from 'react'
 import './../../styles/MenuBar.module.css'
 
 import { Color } from '@tiptap/extension-color'
@@ -6,8 +7,8 @@ import BulletList from '@tiptap/extension-bullet-list'
 import TextStyle from '@tiptap/extension-text-style'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import React from 'react'
-import { BiBold, BiUndo, BiRedo } from 'react-icons/bi'
+
+import { BiUndo, BiRedo } from 'react-icons/bi'
 import { FiItalic, FiBold } from 'react-icons/fi'
 import { GrStrikeThrough } from 'react-icons/gr'
 import { MdFormatListBulleted } from 'react-icons/md'
