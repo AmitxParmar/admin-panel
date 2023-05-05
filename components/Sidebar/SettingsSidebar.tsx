@@ -35,8 +35,7 @@ const SettingsSidebar = (props: Props) => {
                     className={`font-[500] leading-5 flex px-[11px] text-[0.875rem] pt-[4px] justify-start h-[32px] w-[158px] mx-auto  hover:bg-black/25 rounded-md my-1 ${(router.pathname === "/settings/my-profile/profile") ? "bg-[#E5E7EB]" : ""}`}>
                     Profile
                 </button>
-                <div>
-                </div>
+
             </div>
         </div>
     )
