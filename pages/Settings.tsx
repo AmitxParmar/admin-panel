@@ -5,7 +5,7 @@ import { BiLeftArrowAlt } from 'react-icons/bi'
 import Image from 'next/image'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import { settings } from '@/utils/contants'
-import SettingsSidebarItem from '@/components/Sidebar/SettingsSidebarItem'
+import SettingsSidebarItem from '@/components/Sidebar/Settings/SettingsSidebarItem'
 import Link from 'next/link'
 type Props = {}
 
@@ -16,7 +16,7 @@ const Settings = (props: Props) => {
     return (
         <>
 
-            <div className='text-gray text-4xl bg-red-300'>
+            <div className='text-emphasis text-4xl bg-red-300'>
                 <Sidebar>
                     <>
                         <div>
@@ -30,13 +30,13 @@ const Settings = (props: Props) => {
                                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
-                                <span className="my-auto mx-[10px] leading-5 text-gray font-medium text-[0.875rem]"
+                                <span className="my-auto mx-[10px] leading-5 text-emphasis font-medium text-[0.875rem]"
                                 >Amit Parmar</span>
                             </div>
 
                             <Link
                                 href={"/profile/:id"}
-                                className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-9 pt-[4px] justify-start h-[32px] w-[158px] mx-auto hover:bg-black/25 rounded-md my-1${(router.pathname === "/settings/my-profile/profile") ? "bg-[#E5E7EB]" : ""}`}>
+                                className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-9 pt-[4px] justify-start h-[32px] w-[158px] mx-auto hover:bg-subtle rounded-md my-1${(router.pathname === "/settings/my-profile/profile") ? "bg-[#E5E7EB]" : ""}`}>
                                 Profile
                             </Link>
 
@@ -80,7 +80,7 @@ className="left-0 w-[225px] font-[500] pt-[28px] bg-[#1c1c1c] overflow-x-hidden 
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <span className="my-auto mx-[10px] leading-5 text-gray text-[0.875rem]"
+        <span className="my-auto mx-[10px] leading-5 text-emphasis text-[0.875rem]"
         >Amit Parmar</span>
     </div>
 

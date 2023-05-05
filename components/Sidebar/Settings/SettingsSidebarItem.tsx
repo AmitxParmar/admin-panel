@@ -22,10 +22,10 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
                     height={25}
                     width={25}
                     src={icon}
-                    className="rounded-full w-[17px] invert h-[17px] ml-[14px] my-auto"
+                    className="rounded-full w-[17px]  h-[17px] ml-[14px] my-auto"
                 />
                 <span
-                    className="my-auto mx-[10px] leading-5 text-gray text-sm font-medium"
+                    className="my-auto mx-[10px] leading-5 text-emphasis text-sm font-medium"
                 >
                     {name}
                 </span>
@@ -33,12 +33,13 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
 
             {
                 subItem?.map((item, index) =>
-                (<Link key={index} href="/profile/:id"
-                    className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-8 pt-[4px] justify-start  h-[32px] w-[158px] mx-auto hover:bg-black/25 rounded-md my-1 ${(router.pathname === "/settings/my-profile/profile") ? "bg-black/25" : ""}`}>
-                    {item.name}
-                </Link>))
+                (
+                    <Link key={index} href="/profile/:id"
+                        className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-8 pt-[4px] justify-start  h-[32px] w-[158px] mx-auto hover:bg-subtle rounded-md my-1 ${(router.pathname === "/settings/my-profile/profile") ? "bg-gray/25" : ""}`}>
+                        {item.name}
+                    </Link>
+                ))
             }
-
         </>
     )
 }

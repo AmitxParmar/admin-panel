@@ -7,9 +7,9 @@ type Props = {
 
 const Layout = (props: Props) => {
     return (
-        <>
-            <div className='absolute ml-[225px] p-6'>{props.children ?? null}</div>
-        </>
+        <div className='ml-[225px] max-w-full md:py-8 lg:px-12  '>
+            {props.children ?? null}
+        </div>
     )
 }
 

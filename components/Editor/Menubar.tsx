@@ -143,7 +143,7 @@ export default function Editor({ placeholder }) {
     const editor = useEditor({
         editorProps: {
             attributes: {
-                class: "overflow-none outline-none text-[0.875rem] font-[400] leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-auto overflow-y-auto",
+                class: "overflow-none max-h-fit outline-none text-[0.875rem] font-normal leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-auto overflow-y-auto",
             }
         },
         extensions: [

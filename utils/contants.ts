@@ -45,6 +45,11 @@ export const settings = [
 
 export const home = [
   {
+    name: "Event Types",
+    href: "/event-types",
+    icon: "/event-type.svg",
+  },
+  {
     name: "Companies",
     href: "/companies",
     icon: "/event-type.svg",

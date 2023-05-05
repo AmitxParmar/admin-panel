@@ -7,6 +7,7 @@ module.exports = {
     './app/**/*.{ts,tsx}',
   ],
   theme: {
+
     container: {
       center: true,
       padding: "2rem",
@@ -15,18 +16,42 @@ module.exports = {
       },
     },
     extend: {
+      textColor: {
+        emphasis: "#111827",
+        text: "#374151",
+        subtle: "#6b7280",
+        muted: "#9ca3af",
+        inverted: "#fff",
+        info: "#253985",
+        success: "#285231",
+        attention: "#73321b",
+        error: "#752522",
+      },
+      borderColor: {
+        emphasis: "#9ca3af",
+        border: "#d1d5db",
+        subtle: "#e5e7eb",
+        booker: "#e5e7eb",
+        muted: "#f3f4f6",
+      },
+      backgroundColor: {
+        emphasis: "#e5e7eb",
+        DEFAULT: "#fff",
+        subtle: "#f3f4f6",
+        muted: "#f9fafb",
+        inverted: "#111827",
+        info: "#dee9fc",
+        success: "#e2fbe8",
+        attention: "#fceed8",
+        error: "#f9e3e2",
+        
+      },
       colors: {
-        lightwhite: "#f9fafb",
-        lightgrayBg: "#e5e7eb",
-        lightgray: "#D1D5DB",
-        gray: "#D7D7D7",
-        searchBargrey: "#f3f4f6",
-        btntextgray: "#374151",
-        darkgray: "#6D798B",
-        darkblue: "#17174A",
-        skyblue: "#368BFF",
-        lightskyblue: "#EDF5FF",
-        linkedinblue: "#0072b1",
+        "brand": {
+          DEFAULT: "#111827",
+          emphasis: "#101010",
+          text: "#fff",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
