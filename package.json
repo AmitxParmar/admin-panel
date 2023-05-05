@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.2",
     "@radix-ui/react-checkbox": "^1.0.3",
+    "@radix-ui/react-select": "^1.2.1",
     "@tiptap/core": "^2.0.3",
     "@tiptap/extension-bullet-list": "^2.0.3",
     "@tiptap/extension-color": "^2.0.2",

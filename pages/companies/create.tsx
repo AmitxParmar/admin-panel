@@ -11,6 +11,9 @@ import Sidebar from "@/components/Sidebar/Sidebar";
 import Menubar from "@/components/Editor/Menubar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { home } from "@/utils/contants";
+import SidebarItem from "@/components/Sidebar/SidebarItem";
+import DropDown from "@/components/ui/DropDown";
 
 const Create = () => {
     const router = useRouter();
@@ -23,7 +26,11 @@ const Create = () => {
     return (
         <>
             <Sidebar>
-                <></>
+                {
+                    home.map((item, index) => (
+                        <SidebarItem key={index} {...item} />
+                    ))
+                }
             </Sidebar>
             <div className="bg-white w-screen min-h-screen">
                 {/* sider start */}
@@ -46,17 +53,15 @@ const Create = () => {
                             </div>
 
                             <div className="w-[92px] h-[37px] m-2">
-                                {/* <Dropdown
+                                <DropDown
                                     text={"No. of E"}
                                     options={["1-10", "11-25", "26-50", "51-100", "100+"]}
-                                /> */}
+                                />
                             </div>
 
                             <div className="w-[92px] h-[37px] m-2">
-                                {/*  <Dropdown
-                                    text="No. of M"
-                                    options={["1-10", "11-25", "26-50", "51-100", "100+"]}
-                                /> */}
+                                <DropDown text="No. of M"
+                                    options={["1-10", "11-25", "26-50", "51-100", "100+"]} />
                             </div>
                         </div>
 
@@ -70,7 +75,7 @@ const Create = () => {
                             </div>
 
                             <div className="flex">
-                                {/* <input type="checkbox" className="w-4 h-4 my-auto" /> */}
+
                                 <Checkbox className="my-auto" />
                             </div>
                         </div>

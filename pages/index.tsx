@@ -52,8 +52,9 @@ export default function Home() {
         }
       </Sidebar>
       <div className='bg-white h-screen text-black'>
-        <h1 className='text-black mx-auto text-center border-b border-black/25  font-bold'>Top Companies</h1>
-        <Table data={content} headings={headings} />
+        <h1 className='text-black mx-auto text-center border-b border-black/25  font-bold'>Companies &gt; Create &gt; Save</h1>
+        <h1 className='text-black mx-auto text-center border-b border-black/25  font-bold'>Settings &gt; Profile, Security, Billing, Developer</h1>
+        
       </div>
     </main>
   )

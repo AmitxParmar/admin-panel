@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { HtmlHTMLAttributes } from 'react'
 import './../../styles/MenuBar.module.css'
 
 import { Color } from '@tiptap/extension-color'
@@ -22,7 +22,10 @@ const MenuBar = ({ editor }) => {
     return (
         <>
             <button
-                onClick={() => editor.chain().focus().toggleBold().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().toggleBold().run()
+                }}
                 disabled={
                     !editor.can()
                         .chain()
@@ -38,7 +41,10 @@ const MenuBar = ({ editor }) => {
             </button>
 
             <button
-                onClick={() => editor.chain().focus().toggleItalic().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().toggleItalic().run()
+                }}
                 disabled={
                     !editor.can()
                         .chain()
@@ -53,7 +59,10 @@ const MenuBar = ({ editor }) => {
                 />
             </button>
             <button
-                onClick={() => editor.chain().focus().toggleStrike().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().toggleStrike().run()
+                }}
                 disabled={
                     !editor.can()
                         .chain()
@@ -70,7 +79,10 @@ const MenuBar = ({ editor }) => {
 
             <button
                 className=" rounded-md  p-2 m-1  hover:bg-[#F3F4F6]"
-                onClick={() => editor.chain().focus().undo().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().undo().run()
+                }}
                 disabled={
                     !editor.can()
                         .chain()
@@ -85,7 +97,10 @@ const MenuBar = ({ editor }) => {
             </button>
             <button
                 className=" rounded-md p-2 m-1 hover:bg-[#F3F4F6]"
-                onClick={() => editor.chain().focus().redo().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().redo().run()
+                }}
                 disabled={
                     !editor.can()
                         .chain()
@@ -100,7 +115,10 @@ const MenuBar = ({ editor }) => {
             </button>
 
             <button
-                onClick={() => editor.chain().focus().toggleBulletList().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().toggleBulletList().run()
+                }}
                 className={` rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('bulletList') ? 'is-active' : ''}`}
             >
                 <MdFormatListBulleted
@@ -108,7 +126,9 @@ const MenuBar = ({ editor }) => {
                 />
             </button>
             <button
-                onClick={() => editor.chain().focus().toggleOrderedList().run()}
+                onClick={(e) => {
+                    e.preventDefault()
+                    editor.chain().focus().toggleOrderedList().run()}}
                 className={` rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('orderedList') ? 'is-active' : ''}`}
             >
                 <VscListOrdered
@@ -119,7 +139,7 @@ const MenuBar = ({ editor }) => {
     )
 }
 
-export default ({ placeholder }) => {
+export default function Editor({ placeholder }) {
     const editor = useEditor({
         editorProps: {
             attributes: {
@@ -128,7 +148,7 @@ export default ({ placeholder }) => {
         },
         extensions: [
             Color.configure({ types: [TextStyle.name, ListItem.name] }),
-            TextStyle.configure({ types: [ListItem.name] }),
+            /* TextStyle.configure({ types: [ListItem.name] }), */
             StarterKit.configure({
                 bulletList: {
                     keepMarks: true,
@@ -155,7 +175,7 @@ export default ({ placeholder }) => {
     return (
         <div className="border-[1px] rounded-md border-lightgray h-full">
             <MenuBar
-                className="border-[1px]"
+
                 editor={editor} />
             <EditorContent
                 className="p-2 outline-none overflow-auto"

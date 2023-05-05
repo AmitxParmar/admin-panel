@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import { settings } from '@/utils/contants'
 import SettingsSidebarItem from '@/components/Sidebar/SettingsSidebarItem'
+import Link from 'next/link'
 type Props = {}
 
 const Settings = (props: Props) => {
@@ -29,17 +30,15 @@ const Settings = (props: Props) => {
                                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
-                                <span className="my-auto mx-[10px] leading-5 text-gray text-[0.875rem]"
+                                <span className="my-auto mx-[10px] leading-5 text-gray font-medium text-[0.875rem]"
                                 >Amit Parmar</span>
                             </div>
 
-                            <button
-                                onClick={() => {
-                                    router.push("/settings/my-profile/profile")
-                                }}
-                                className={`font-medium leading-5 flex px-[11px] text-[0.875rem] pt-[4px] justify-start h-[32px] ml-6 w-[158px] mx-auto  hover:bg-black/25 rounded-md my-1 ${(router.pathname === "/settings/my-profile/profile") ? "bg-[#E5E7EB]" : ""}`}>
+                            <Link
+                                href={"/profile/:id"}
+                                className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-9 pt-[4px] justify-start h-[32px] w-[158px] mx-auto hover:bg-black/25 rounded-md my-1${(router.pathname === "/settings/my-profile/profile") ? "bg-[#E5E7EB]" : ""}`}>
                                 Profile
-                            </button>
+                            </Link>
 
                         </div>
                         {settings.map(({ name, icon, subItem }, index) => (

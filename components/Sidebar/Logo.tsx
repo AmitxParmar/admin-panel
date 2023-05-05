@@ -6,7 +6,7 @@ type Props = {}
 
 const Logo = (props: Props) => {
     return (
-        <header className='items-center justify-between lg:flex md:hidden'>
+        <header className='items-center mb-6 justify-between lg:flex md:hidden'>
             <Link className='px-2' href={"/"} >
                 <h3 className='inline logo'>
                     <strong>

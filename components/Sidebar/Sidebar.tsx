@@ -37,7 +37,7 @@ const Sidebar = (props: Props) => {
                         </span>
                     </button>)
             )}
-            <div className='p-4'>
+            <div className='px-4'>
                 {props.children ?? null}
             </div>
         </aside >
