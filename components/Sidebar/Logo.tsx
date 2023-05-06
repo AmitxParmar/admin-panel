@@ -23,7 +23,7 @@ const Logo = (props: Props) => {
             </Link>
             <div className='flex space-x-2 rtl:space-x-reverse'>
                 <button className='text-default group text-sm py-2 px-3 font-medium lg:p-1 lg:hover:bg- rounded-md'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" stroke-linejoin="round" className="h-4 w-4 flex-shrink-0 text-inherit"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 flex-shrink-0 text-inherit"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
 
             </div>

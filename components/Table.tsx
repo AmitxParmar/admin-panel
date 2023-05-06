@@ -20,33 +20,35 @@ const Table = (
     }
 
     return (
-        <div className="w-full rounded-lg border border-black overflow-hidden">
-            <table className="w-full table-auto">
-                <thead>
-                    <tr className="bg-gray-200 text-black uppercase text-sm leading-normal">
-                        <th className="py-3 px-6 text-left border border-black">#</th>
-                        {headings.map((item, index) =>
-                        (
-                            <th key={index} className="py-3 border border-black px-6 text-left">{item}
-                            </th>
-                        )
-                        )}
-                    </tr>
-                </thead>
+        <table className="w-full rounded-md mx-auto overflow-hidden ">
+            <thead className=''>
+                <tr className="text-black uppercase text-sm leading-normal">
+                    <th className="py-3 px-6 text-left">#</th>
+                    <th className="py-3 px-6 text-left">Company</th>
+                    <th className="py-3 px-6 text-left">Designation</th>
+                    <th className="py-3 px-6 text-left">Experience</th>
+                    {/* {headings.map((item, index) =>
+                    (
+                        <th key={index} className="py-3 border border-black px-6 text-left">{item}
+                        </th>
+                    )
+                    )} */}
+                </tr>
+            </thead>
+            <tbody className="text-emphasis border max-w-full border-muted text-sm font-light">
                 {data.map(({ company, designation, experience }, index) => (
-                    <tbody key={index} className="text-emphasis-600 text-sm font-light">
-                        <Link className='static' href={company}>
-                            <tr className=" font-medium hover:bg-gray-100">
-                                <td className="py-3 px-6 text-left whitespace-nowrap">{index + 1}</td>
-                                <td className="py-3 px-6 text-left">{truncateString(company, 12)}</td>
-                                <td className="py-3 px-6 text-left">{truncateString(designation, 12)}</td>
-                                <td className="py-3 px-6 text-left">{truncateString(experience, 12)}</td>
-                            </tr>
-                        </Link>
-                    </tbody>
+                    <tr key={index} className="font-medium hover:bg-gray-100">
+
+                        <td className="py-3  px-6 text-center  whitespace-nowrap">{index + 1}</td>
+                        <td className=" py-3 px-6 text-left">{truncateString(company, 12)}</td>
+                        <td className=" py-3 px-6 text-left">{truncateString(designation, 12)}</td>
+                        <td className="py-3 px-6 mx-auto text-left">{truncateString(experience, 12)}</td>
+
+                    </tr>
                 ))}
-            </table>
-        </div>
+            </tbody>
+        </table>
+
     )
 };
 

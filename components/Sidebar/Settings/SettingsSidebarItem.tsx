@@ -15,14 +15,14 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
     const router = useRouter();
 
     return (
-        <>
+        <div>
             <div className="h-[36px] w-full flex">
                 <Image
                     alt={name}
                     height={25}
                     width={25}
                     src={icon}
-                    className="rounded-full w-[17px]  h-[17px] ml-[14px] my-auto"
+                    className="svg_icon rounded-full w-[17px]  h-[17px] ml-[14px] my-auto"
                 />
                 <span
                     className="my-auto mx-[10px] leading-5 text-emphasis text-sm font-medium"
@@ -40,7 +40,7 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
                     </Link>
                 ))
             }
-        </>
+        </div>
     )
 }
 

@@ -1,10 +1,12 @@
 .ProseMirror>*+* {
     margin-top: 0.75em;
+    
 }
 
 .ProseMirror ul,
 .ProseMirror ol {
     padding: 0 1rem;
+    
 }
 
 .ProseMirror h1,
@@ -42,6 +44,7 @@
 }
 
 .ProseMirror blockquote {
+    
     padding-left: 1rem;
     border-left: 2px solid rgba(13, 13, 13, 0.1);
 }

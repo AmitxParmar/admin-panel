@@ -7,7 +7,9 @@ module.exports = {
     './app/**/*.{ts,tsx}',
   ],
   theme: {
-
+    letterSpacing: {
+      normal: "-.025em",
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -17,8 +19,8 @@ module.exports = {
     },
     extend: {
       textColor: {
+        default: "#374151",
         emphasis: "#111827",
-        text: "#374151",
         subtle: "#6b7280",
         muted: "#9ca3af",
         inverted: "#fff",
@@ -44,11 +46,11 @@ module.exports = {
         success: "#e2fbe8",
         attention: "#fceed8",
         error: "#f9e3e2",
-        
+
       },
       colors: {
         "brand": {
-          DEFAULT: "#111827",
+          default: "#111827",
           emphasis: "#101010",
           text: "#fff",
         },
@@ -107,5 +109,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
 }

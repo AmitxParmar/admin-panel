@@ -37,16 +37,15 @@ const Companies: React.FC = () => {
         },
     ];
 
-
     return (
         <>
-            <Sidebar>
-                <>{""}</>
-            </Sidebar>
-            <Link href="/companies/create" >
-                <Button className='mb-12'>Create</Button>
-            </Link>
-            <Table data={content} headings={headings} />
+            <div className=''>
+                <Link href="/companies/create" >
+                    <Button className='mb-12'>Create</Button>
+                </Link>
+                <Table data={content} headings={headings} />
+            </div>
+
         </>
     )
 }

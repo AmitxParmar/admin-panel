@@ -14,10 +14,11 @@ const SidebarItem = (props: Props) => {
             <button
                 className="w-full py-2 px-3  mt-0.5 hover:bg-emphasis group text-[14px] justify-start flex h-fit rounded-md text-emphasis"
             >
-                <Image height={25} width={25} alt={props.name} src={props.icon}
-                    className="w-[25px] mr-2 my-auto  h-[25px] p-1"
+                <Image fill alt={props.name} src={props.icon}
+                    className="svg_icon text-[14px] leading-5 mr-2 my-auto flex-shrink-0 ltr:mr-2 stroke-2 rtl:ml-2 max-h-[17px] "
                 />
-                <span className="font-semibold justify-between lg:flex leading-5 text-emphasis text-[0.875rem] my-auto">{props.name}
+                <span className="font-medium text-start justify-between lg:flex leading-5 text-emphasis text-[0.875rem] my-auto">
+                    {props.name}
                 </span>
             </button>
         </Link>

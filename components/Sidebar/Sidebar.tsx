@@ -4,6 +4,9 @@ import { BiLeftArrowAlt } from 'react-icons/bi'
 
 import { Skeleton } from '../ui/skeleton';
 import Logo from './Logo';
+import { home } from '../../utils/contants';
+import SidebarItem from '@/components/Sidebar/SidebarItem';
+import TestItem from './TestItem';
 
 type Props = {
     children: ReactNode;
@@ -15,14 +18,14 @@ const Sidebar = (props: Props) => {
 
     return (
         <aside
-            className={`w-56 px-4 left-0 top-0 bottom-0 text-emphasis bg-subtle overflow-x-hidden overflow-y-auto h-screen fixed`}>
+            className={`w-56 px-4 left-0 top-0 bottom-0 text-emphasis bg-muted overflow-x-hidden no-scrollbar overflow-y-auto h-screen fixed`}>
             <div className='h-full flex-col justify-between py-3 lg:pt-6'>
-                {props.isLoading ? (
+               {/*  {props.isLoading ? (
                     <Skeleton className='rounded-full w-full h-10' />
                 ) : (
-                    router.pathname === "/" ? (
+                    router.pathname === "/" ? ( */}
                         <Logo />
-                    ) : (
+                { /*    ) : (
                         <button
                             onClick={() => {
                                 router.back()
@@ -36,9 +39,12 @@ const Sidebar = (props: Props) => {
                                 Back
                             </span>
                         </button>)
-                )}
-                <div className=''>
-                    {props.children ?? null}
+                )} */}
+                <div className='text-emphasis'>
+                {home.map(({ name, href, icon }, index) => (
+                    <TestItem key={index} icon={icon} name={name} href={href} />
+                ))
+                }
                 </div>
             </div>
         </aside >

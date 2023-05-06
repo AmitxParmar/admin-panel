@@ -1,5 +1,5 @@
 import React, { HtmlHTMLAttributes } from 'react'
-import './../../styles/MenuBar.module.css'
+import '@/styles/Menubar.module.css'
 
 import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
@@ -128,7 +128,8 @@ const MenuBar = ({ editor }) => {
             <button
                 onClick={(e) => {
                     e.preventDefault()
-                    editor.chain().focus().toggleOrderedList().run()}}
+                    editor.chain().focus().toggleOrderedList().run()
+                }}
                 className={` rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('orderedList') ? 'is-active' : ''}`}
             >
                 <VscListOrdered
@@ -143,7 +144,7 @@ export default function Editor({ placeholder }) {
     const editor = useEditor({
         editorProps: {
             attributes: {
-                class: "overflow-none max-h-fit outline-none text-[0.875rem] font-normal leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-auto overflow-y-auto",
+                class: "overflow-none p-6 leading-5 list-decimal list-disc h-64 border border-emphasis rounded-md scrollbar-none  outline-none text-[0.875rem] font-normal leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-scroll overflow-y-scroll",
             }
         },
         extensions: [
@@ -166,20 +167,19 @@ export default function Editor({ placeholder }) {
             })
         ],
         content: `
- 
-  <h1>${placeholder}</h1>
-
-    `,
+    <h1>${placeholder}</h1>
+    `
     })
-
+    console.log(editor?.getJSON())
     return (
-        <div className="border-[1px] rounded-md border-lightgray h-full">
+        <>
             <MenuBar
-
-                editor={editor} />
+                editor={editor}
+            />
             <EditorContent
-                className="p-2 outline-none overflow-auto"
-                editor={editor} />
-        </div>
+                className="p-2 outline-none scrollbar-none overflow-scroll"
+                editor={editor}
+            />
+        </>
     )
 }

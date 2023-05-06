@@ -54,9 +54,35 @@ export const home = [
     href: "/companies",
     icon: "/event-type.svg",
   },
+ 
+  {
+    name: "Bookings",
+    href: "/bookings",
+    icon: "/bookings.svg",
+  },
+  {
+    name: "Teams",
+    href: "/Teams",
+    icon: "/teams.svg",
+  },
+  {
+    name: "Apps",
+    href: "/apps",
+    icon: "/apps.svg",
+  },
+  {
+    name: "Workflows",
+    href: "/workflows",
+    icon: "/workflows.svg",
+  },
+  {
+    name: "Insights",
+    href: "/insights",
+    icon: "/insights.svg",
+  },
   {
     name: "Settings",
-    href: "/Settings",
+    href: "/settings",
     icon: "/settings.svg",
   },
 ];
