@@ -21,7 +21,17 @@ const Companies: React.FC = () => {
             experience: "1-3 yrs",
         },
         {
-            company: "CARS24",
+            company: "Apple",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Microsoft",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Google",
             designation: "UI/UX Designer",
             experience: "1-3 yrs",
         },
@@ -31,7 +41,37 @@ const Companies: React.FC = () => {
             experience: "1-3 yrs",
         },
         {
+            company: "Apple",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Microsoft",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Google",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
             company: "CARS24",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Apple",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Microsoft",
+            designation: "UI/UX Designer",
+            experience: "1-3 yrs",
+        },
+        {
+            company: "Google",
             designation: "UI/UX Designer",
             experience: "1-3 yrs",
         },

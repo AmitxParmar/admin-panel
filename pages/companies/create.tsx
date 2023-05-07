@@ -5,34 +5,21 @@ import { FiKey } from "react-icons/fi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { HiCode } from "react-icons/hi";
 import { AiOutlineTeam } from "react-icons/ai";
-import { BiLeftArrowAlt } from "react-icons/bi";
 import { Input } from "@/components/ui/input";
-import Sidebar from "@/components/Sidebar/Sidebar";
 import Menubar from "@/components/Editor/Menubar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { home } from "@/utils/contants";
-import SidebarItem from "@/components/Sidebar/SidebarItem";
+
 import DropDown from "@/components/ui/DropDown";
 
 const Create = () => {
-    const router = useRouter();
-    const [employee, setEmployee] = React.useState("");
 
-    const handleChange = (event) => {
-        setEmployee(event.target.value);
-    };
+
+
+
 
     return (
         <>
-            {/* <Sidebar>
-                {
-                    home.map((item, index) => (
-                        <SidebarItem key={index} {...item} />
-                    ))
-                }
-            </Sidebar> */}
-
             <div className="max-w-fit ">
                 <form className="border-[1px] border-lightgrayBg rounded-lg p-4">
                     <div className="flex">

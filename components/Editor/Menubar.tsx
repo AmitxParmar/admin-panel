@@ -1,11 +1,11 @@
-import React, { HtmlHTMLAttributes } from 'react'
+import React from 'react'
 import '@/styles/Menubar.module.css'
 
 import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
 import BulletList from '@tiptap/extension-bullet-list'
 import TextStyle from '@tiptap/extension-text-style'
-import { EditorContent, useEditor } from '@tiptap/react'
+import { type Editor, EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
 import { BiUndo, BiRedo } from 'react-icons/bi'
@@ -14,7 +14,9 @@ import { GrStrikeThrough } from 'react-icons/gr'
 import { MdFormatListBulleted } from 'react-icons/md'
 import { VscListOrdered } from 'react-icons/vsc'
 
-const MenuBar = ({ editor }) => {
+const MenuBar = ({ editor }: {
+    editor: ReturnType<typeof useEditor>
+}) => {
     if (!editor) {
         return null
     }
@@ -140,8 +142,11 @@ const MenuBar = ({ editor }) => {
     )
 }
 
-export default function Editor({ placeholder }) {
+export default function TipTapEditor({ placeholder }:{
+    placeholder: string
+}) {
     const editor = useEditor({
+        onUpdate: (text => console.log(text)),
         editorProps: {
             attributes: {
                 class: "overflow-none p-6 leading-5 list-decimal list-disc h-64 border border-emphasis rounded-md scrollbar-none  outline-none text-[0.875rem] font-normal leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-scroll overflow-y-scroll",
