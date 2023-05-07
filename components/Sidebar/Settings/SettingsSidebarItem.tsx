@@ -12,10 +12,10 @@ interface NavItem {
     }[]
 }
 const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
-    const router = useRouter();
 
+    const router = useRouter();
     return (
-        <div>
+        <div className=''>
             <div className="h-[36px] w-full flex">
                 <Image
                     alt={name}
@@ -34,8 +34,10 @@ const SettingsSidebarItem: React.FC<NavItem> = ({ icon, name, subItem }) => {
             {
                 subItem?.map((item, index) =>
                 (
-                    <Link key={index} href="/profile/:id"
-                        className={`font-medium leading-5 flex px-[11px] text-[0.875rem] ml-8 pt-[4px] justify-start  h-[32px] w-[158px] mx-auto hover:bg-subtle rounded-md my-1 ${(router.pathname === "/settings/my-profile/profile") ? "bg-gray/25" : ""}`}>
+                    <Link
+                        key={index}
+                        href={item.href}
+                        className={`text-emphasis font-medium text-sm min-h-8 hover:bg-subtle [&[aria-current='page']]:bg-emphasis [&[aria-current='page']]:text-emphasis group-hover:text-default group flex flex-row items-center rounded-md px-3 py-[10px] ml-9 w-auto ltr:mr-5 rtl:ml-5 my-0.5 h-7 false font-inter ${(router.pathname === item.href) ? "bg-gray/25" : ""}`}>
                         {item.name}
                     </Link>
                 ))

@@ -7,6 +7,9 @@ module.exports = {
     './app/**/*.{ts,tsx}',
   ],
   theme: {
+    fontFamily:{
+      inter: "var(--font-inter)"
+    },
     letterSpacing: {
       normal: "-.025em",
     },
@@ -18,6 +21,7 @@ module.exports = {
       },
     },
     extend: {
+      
       textColor: {
         default: "#374151",
         emphasis: "#111827",

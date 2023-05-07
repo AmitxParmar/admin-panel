@@ -1,12 +1,14 @@
+import Image from 'next/image';
 import { Input } from '@/components/ui/input'
 import React from 'react'
 import { AiOutlineDelete } from 'react-icons/ai'
 import Menubar from '@/components/Editor/Menubar';
+import { Label } from '@/components/ui/label';
 type Props = {}
 
 const Profile = (props: Props) => {
     return (
-        <main className="min-h-screen flex bg-white w-full">
+        <main className="flex bg-white w-full">
             <div
                 className="w-full max-w-[995px] mx-auto"
             >
@@ -14,14 +16,17 @@ const Profile = (props: Props) => {
                     className="w-full justify-start text-[1.25rem] text-darkblue font-bold"
                 >Profile</h1>
                 <h1
-                    className="text-[0.875rem] text-btntextgray pb-[25px] border-b-[1px] border-lightgray"
+                    className="text-[0.875rem] text-emphasis pb-[25px] border-b-[1px] border-lightgray"
                 >
                     Manage settings for your Cal.com profile
                 </h1>
 
 
                 <div className="flex py-[32px]">
-                    <img
+                    <Image
+                        height={25}
+                        width={25}
+                        alt={"Profile Pic"}
                         className="w-[67px] h-[67px] rounded-full"
                         src="https://app.cal.com/teenfounders/avatar.png"
                     />
@@ -29,22 +34,21 @@ const Profile = (props: Props) => {
 
                     <button
                         className="w-[130px] h-[32px] font-[500] rounded-md border-[1px] my-auto mx-[16px] text-[0.875rem] border-lightgray"
-
                     >
                         Change Avatar
                     </button>
                 </div>
 
-                <div>
-                    <h1 className="my-[5px] text-[0.875rem] font-[500]">
+                <div className='mt-8'>
+                    <h1 className="my-[5px] text-[0.875rem] font-medium">
                         Username
                     </h1>
                     <div className="flex">
                         <span className="w-[79px] h-[34px] rounded-l-md border-[1px] border-lightgray bg-[#f9fafb] text-center pt-1  text-[14px] text-[#94958F]">
                             cal.com/
                         </span>
-                        <input
-                            className="w-full mb-[2px] py-[11px] px-[15px] font-light border-[1px] border-lightgray rounded-r-md h-[34px] border-l-0 focus:outline-none"
+                        <Input
+                            className="w-full mb-[2px] py-[11px] px-[15px] font-light border-[1px] placeholder:text-muted border-lightgray outline-none focus:ring-0 rounded-r-md h-[34px] border-l-0 focus:outline-none"
                         />
                     </div>
                 </div>
@@ -52,8 +56,15 @@ const Profile = (props: Props) => {
                 {/* <LabelInput
                     text="Full name"
                 /> */}
-                <Input placeholder='Full name' />
-                <Input placeholder='Email' />
+                <div className='mt-8'>
+                    <label className='text-emphasis mb-2 block text-sm font-medium'>Full Name</label>
+                    <Input placeholder='Full name' />
+                </div>
+
+                <div>
+                    <Label />
+                    <Input placeholder='Email' />
+                </div>
 
 
                 {/* /* <LabelInput

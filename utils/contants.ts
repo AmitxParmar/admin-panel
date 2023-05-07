@@ -5,15 +5,15 @@ export const settings = [
     subItem: [
       {
         name: "Password",
-        href: "/password",
+        href: "/settings/password",
       },
       {
         name: "Two Factor Auth",
-        href: "/password",
+        href: "/settings/two-factor-auth",
       },
       {
         name: "Impersonation",
-        href: "/password",
+        href: "/password/impersonate",
       },
     ],
   },
@@ -23,7 +23,7 @@ export const settings = [
     subItem: [
       {
         name: "Manage Billing",
-        href: "/ManageBilling",
+        href: "/settings/ManageBilling",
       },
     ],
   },
@@ -33,11 +33,11 @@ export const settings = [
     subItem: [
       {
         name: "Web Hooks",
-        href: "/ManageBilling",
+        href: "/settings/web-hooks",
       },
       {
         name: "API Keys",
-        href: "/ManageBilling",
+        href: "/settings/api-keys",
       },
     ],
   },
@@ -50,12 +50,6 @@ export const home = [
     icon: "/event-type.svg",
   },
   {
-    name: "Companies",
-    href: "/companies",
-    icon: "/event-type.svg",
-  },
- 
-  {
     name: "Bookings",
     href: "/bookings",
     icon: "/bookings.svg",
@@ -65,6 +59,12 @@ export const home = [
     href: "/Teams",
     icon: "/teams.svg",
   },
+  {
+    name: "Companies",
+    href: "/companies",
+    icon: "/event-type.svg",
+  },
+
   {
     name: "Apps",
     href: "/apps",
@@ -82,7 +82,7 @@ export const home = [
   },
   {
     name: "Settings",
-    href: "/settings",
+    href: "/settings/my-account/profile",
     icon: "/settings.svg",
   },
 ];

@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react'
+import React, { useEffect, type ReactElement } from 'react'
 import { useRouter } from 'next/router'
 
 /* import Image from 'next/image'
@@ -8,27 +8,14 @@ import SettingsSidebarItem from '@/components/Sidebar/Settings/SettingsSidebarIt
 import Link from 'next/link'
 import { type NextPageWithLayout } from '@/pages/_app';
 import SettingNav from '@/components/Sidebar/Settings/SettingNav' */
-import SettingsLayout from './Layout'
-import Profile from './my-account/profile'
+
 type Props = {}
 
-const Settings = (props: Props) => {
-
+const Settings = (props: Props): void => {
     const router = useRouter();
-
-    return (
-        <>
-            <Profile />
-        </>
-    )
-}
-
-Settings.getLayout = function getLayout(page: ReactElement) {
-    return (
-        <SettingsLayout>
-            {page}
-        </SettingsLayout>
-    )
+    useEffect(() => {
+        router.push("/settings/my-account/profile")
+    }, [])
 }
 
 export default Settings;

@@ -1,7 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Inter } from 'next/font/google';
 
+const inter = Inter({ 
+  weight: ["500"], 
+  style: ["normal"], 
+  subsets: ["latin"], 
+  display: "swap", 
+  variable: "--font-inter", 
+});
 type Props = {}
 
 const TestItem = ({ name, href, icon }: {
@@ -10,7 +18,7 @@ const TestItem = ({ name, href, icon }: {
     icon: string;
 }) => {
     return (
-        <Link aria-label="Event Types" className="hover:bg-emphasis bg-default hover:text-emphasis text-default group flex items-center rounded-md py-2 px-3 font-medium [&amp;[aria-current='page']]:text-emphasis mt-0.5 text-sm" aria-current="page" href={href}>
+        <Link aria-label="Event Types" className="hover:bg-emphasis bg-default hover:text-emphasis text-default group flex items-center rounded-md py-2 px-3 font-inter font-medium [&amp;[aria-current='page']]:text-emphasis mt-0.5 text-sm" aria-current="page" href={href}>
             <Image
                 width={16}
                 height={16}
