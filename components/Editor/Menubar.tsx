@@ -22,7 +22,7 @@ const MenuBar = ({ editor }: {
     }
 
     return (
-        <>
+        <div className='fixed bg-black w-full h-12'>
             <button
                 onClick={(e) => {
                     e.preventDefault()
@@ -35,7 +35,7 @@ const MenuBar = ({ editor }: {
                         .toggleBold()
                         .run()
                 }
-                className={`rounded-md p-2 m-1 hover:bg-[#F3F4F6] ${editor.isActive('bold') ? 'is-active' : ''}`}
+                className={`rounded-md p-1 m-1 text-sm hover:bg-[#F3F4F6] ${editor.isActive('bold') ? 'is-active' : ''}`}
             >
                 <FiBold
                     fontSize={20}
@@ -80,7 +80,7 @@ const MenuBar = ({ editor }: {
             </button>
 
             <button
-                className=" rounded-md  p-2 m-1  hover:bg-[#F3F4F6]"
+                className=" rounded-md p-2 m-1 hover:bg-[#F3F4F6]"
                 onClick={(e) => {
                     e.preventDefault()
                     editor.chain().focus().undo().run()
@@ -138,18 +138,18 @@ const MenuBar = ({ editor }: {
                     fontSize={20}
                 />
             </button>
-        </>
+        </div>
     )
 }
 
-export default function TipTapEditor({ placeholder }:{
+export default function TipTapEditor({ placeholder }: {
     placeholder: string
 }) {
     const editor = useEditor({
         onUpdate: (text => console.log(text)),
         editorProps: {
             attributes: {
-                class: "overflow-none p-6 leading-5 list-decimal list-disc h-64 border border-emphasis rounded-md scrollbar-none  outline-none text-[0.875rem] font-normal leading-[1.5rem] text-[#1F2937] placeholder-[#9CA3AF] overflow-x-scroll overflow-y-scroll",
+                class: "focus:outline-none mt-12 p-3 list-disc min-h-full static max-h-full overflow-y-scroll h-full border",
             }
         },
         extensions: [
@@ -158,11 +158,11 @@ export default function TipTapEditor({ placeholder }:{
             StarterKit.configure({
                 bulletList: {
                     keepMarks: true,
-                    keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+                    keepAttributes: false, // TODO : Making this as `false` because marks are not preserved when I try to preserve attrs, awaiting a bit of help
                 },
                 orderedList: {
                     keepMarks: true,
-                    keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+                    keepAttributes: false, // TODO : Making this as `false` because marks are not preserved when I try to preserve attrs, awaiting a bit of help
                 },
             }),
             BulletList.configure({
@@ -181,10 +181,11 @@ export default function TipTapEditor({ placeholder }:{
             <MenuBar
                 editor={editor}
             />
-            <EditorContent
-                className="p-2 outline-none scrollbar-none overflow-scroll"
-                editor={editor}
-            />
+            
+                <EditorContent
+                    editor={editor}
+                />
+            
         </>
     )
 }

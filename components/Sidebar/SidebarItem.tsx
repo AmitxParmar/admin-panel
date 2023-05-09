@@ -12,7 +12,7 @@ const SidebarItem = (props: Props) => {
     return (
         <Link href={props.href}>
             <button
-                className="w-full py-2 px-3  mt-0.5 hover:bg-emphasis group text-[14px] justify-start flex h-fit rounded-md text-emphasis"
+                className="w-full py-2 px-3 mt-0.5 hover:bg-emphasis group text-[14px] justify-start flex h-fit rounded-md text-emphasis"
             >
                 <Image fill alt={props.name} src={props.icon}
                     className="svg_icon text-[14px] leading-5 mr-2 my-auto flex-shrink-0 ltr:mr-2 stroke-2 rtl:ml-2 max-h-[17px] "

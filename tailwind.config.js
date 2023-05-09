@@ -42,7 +42,7 @@ module.exports = {
       },
       backgroundColor: {
         emphasis: "#e5e7eb",
-        DEFAULT: "#fff",
+        default: "#fff",
         subtle: "#f3f4f6",
         muted: "#f9fafb",
         inverted: "#111827",

@@ -5,7 +5,7 @@ type Props = {}
 
 const Event = (props: Props) => {
   return (
-    <section className="bg- hover:bg-subtle group flex w-full max-w-full items-center justify-center overflow-hidden border p-4 sm:px-6  text-emphasis border-gray">
+    <section className="hover:bg-subtle group flex w-full max-w-full items-center justify-center overflow-hidden border p-4 sm:px-6  text-emphasis border-gray">
       <Link href={"/event"} className='flex-1 overflow-hidden pr-4 text-sm'>
         <div className=''>
           <span className='text-default font-semibold mr-1 ltr:mr-1 rtl:ml-1'>15 Min Meeting</span>

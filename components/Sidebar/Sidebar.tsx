@@ -24,7 +24,7 @@ const Sidebar = (props: Props) => {
 
     return (
         <aside
-            className={`w-56 px-4 left-0 top-0 bottom-0 text-emphasis bg-muted overflow-x-hidden overflow-y-auto h-screen fixed`}>
+            className={`md:w-56 md:block sm:w-0 sm:hidden px-4 left-0 top-0 bottom-0 text-emphasis bg-muted overflow-x-hidden overflow-y-auto h-screen fixed`}>
             <div className='h-full flex-col justify-between py-3 lg:pt-6'>
                {/*  {props.isLoading ? (
                     <Skeleton className='rounded-full w-full h-10' />

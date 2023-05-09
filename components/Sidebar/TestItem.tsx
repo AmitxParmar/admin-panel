@@ -18,7 +18,7 @@ const TestItem = ({ name, href, icon }: {
     icon: string;
 }) => {
     return (
-        <Link aria-label="Event Types" className="hover:bg-emphasis bg-default hover:text-emphasis text-default group flex items-center rounded-md py-2 px-3 font-inter font-medium [&amp;[aria-current='page']]:text-emphasis mt-0.5 text-sm" aria-current="page" href={href}>
+        <Link aria-label="Event Types" className="hover:bg-emphasis  hover:text-emphasis text-default group flex items-center rounded-md py-2 px-3 font-inter font-medium [&amp;[aria-current='page']]:text-emphasis mt-0.5 text-sm" aria-current="page" href={href}>
             <Image
                 width={16}
                 height={16}
