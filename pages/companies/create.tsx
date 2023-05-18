@@ -5,47 +5,50 @@ import { FiKey } from "react-icons/fi";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { HiCode } from "react-icons/hi";
 import { AiOutlineTeam } from "react-icons/ai";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/AdminPanel/Input";
 import Menubar from "@/components/Editor/Menubar";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-
+import QuillEditor from "@/components/Editor/QuillEditor";
 import DropDown from "@/components/ui/DropDown";
 
 const Create = () => {
 
-
-
-
-
     return (
         <>
-            <div className="max-w-[950px] min-w-full overflow-x-hidden ">
-                <form className="border-[1px] border-lightgrayBg rounded-lg p-4">
-                    <div className="grid grid-cols-2">
-                        <div className="grid grid-rows-3 max-w-[350px]">
+            <div className="max-w-[950px] flex-auto max-h-[950px] min-w-full overflow-hidden">
+                <form className="border border-emphasis  rounded-lg p-4">
+                    <div className="flex flex-row justify-around items-center max-w-full">
+                        <div className="flex flex-col relative">
                             <div className="w-full h-[37px] m-3">
-                                <Input className="max-w-[350px]" type="text" placeholder="Company Name" />
+                                <Input className="min-w-max" type="text" placeholder="Company Name" />
                             </div>
-                            <div className="max-w-[350px] h-[37px] m-3">
-                                <Input className="max-w-[350px]" type="text" placeholder="Tagline" />
+                            <div className="w-full h-[37px] m-3">
+                                <Input className="min-w-max max-w-[350px]" type="text" placeholder="Tagline" />
                             </div>
-                            <div className="max-w-[350px] h-[37px] m-3">
+                            <div className="w-full h-[37px] m-3">
+                                <Input className="min-w-max max-w-[350px]" type="text" placeholder="Tags" />
+                            </div>
+                            {/* <div className="w-full h-[37px] m-3">
+                                <Input className=" max-w-[350px]" type="text" placeholder="Tagline" />
+                            </div>
+                            <div className="w-full h-[37px] m-3">
                                 <Input className="max-w-[350px]" type="text" placeholder="Tags" />
-                            </div>
+                            </div> */}
                         </div>
-                        <div className="overflow-hidden w-[550px] max-w-[550px] max-h-[190px]">
-                            <Menubar placeholder="as" />
+                        <div className="overflow-y-hidden  w-full max-w-[550px] h-[190px] max-h-[190px]">
+                            <QuillEditor />
+                            {/* <Menubar placeholder="Tags" /> */}
                         </div>
-
                     </div>
 
                     {/* Removed the checkbox for now */}
 
-                    <div className="flex flex-row mt-6">
-                        <div className="w-[750px] min-h-[400px] m-2 my-auto leading">
+                    <div className="flex flex-row justify-around mt-6">
+                        <div className="max-w-[750px] w-[750px] h-[400px] max-h-[400px] overflow-hidden scrollbar-thin m-2 my-auto ">
                             {/* <Input className="min-" placeholder="Company Description" /> */}
-                            <Menubar placeholder="asdad" />
+                            <QuillEditor/>
+                            {/* <Menubar placeholder="Company Description" /> */}
                         </div>
                         <div className="flex flex-col items-center ">
                             <div className="h-[90px] mb-5 text-white rounded-full w-[90px] bg-black">
@@ -57,7 +60,9 @@ const Create = () => {
                             </div>
 
                             <div className="w-[120px] min-w-[120px] h-[37px] m-2">
+                                {/* <label htmlFor="">No. of E</label> */}
                                 <DropDown
+
                                     text={"No. of E"}
                                     options={["1-10", "11-25", "26-50", "51-100", "100+"]}
                                 />

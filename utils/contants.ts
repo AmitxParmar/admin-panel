@@ -55,6 +55,11 @@ export const home = [
     icon: "/bookings.svg",
   },
   {
+    name: "Availability",
+    href: "/availability",
+    icon: "/availability.svg",
+  },
+  {
     name: "Teams",
     href: "/Teams",
     icon: "/teams.svg",

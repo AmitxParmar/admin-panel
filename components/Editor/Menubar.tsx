@@ -5,7 +5,7 @@ import { Color } from '@tiptap/extension-color'
 import ListItem from '@tiptap/extension-list-item'
 import BulletList from '@tiptap/extension-bullet-list'
 import TextStyle from '@tiptap/extension-text-style'
-import { type Editor, EditorContent, useEditor } from '@tiptap/react'
+import { type Editor, EditorContent, useEditor,type EditorOptions } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
 import { BiUndo, BiRedo } from 'react-icons/bi'
@@ -15,14 +15,14 @@ import { MdFormatListBulleted } from 'react-icons/md'
 import { VscListOrdered } from 'react-icons/vsc'
 
 const MenuBar = ({ editor }: {
-    editor: ReturnType<typeof useEditor>
+    editor: Editor | null
 }) => {
     if (!editor) {
         return null
     }
 
     return (
-        <div className='fixed bg-black w-full h-12'>
+        <div className='bg-gray-100 sticky w-full'>
             <button
                 onClick={(e) => {
                     e.preventDefault()
@@ -35,8 +35,7 @@ const MenuBar = ({ editor }: {
                         .toggleBold()
                         .run()
                 }
-                className={`rounded-md p-1 m-1 text-sm hover:bg-[#F3F4F6] ${editor.isActive('bold') ? 'is-active' : ''}`}
-            >
+                className={`rounded-md p-2 m-1 hover:bg-emphasis ${editor.isActive('bold') ? 'is-active' : ''}`}>
                 <FiBold
                     fontSize={20}
                 />
@@ -54,8 +53,7 @@ const MenuBar = ({ editor }: {
                         .toggleItalic()
                         .run()
                 }
-                className={`rounded-md p-2 m-1 hover:bg-[#F3F4F6] ${editor.isActive('italic') ? 'is-active' : ''}`}
-            >
+                className={`rounded-md p-2 m-1 hover:bg-emphasis ${editor.isActive('italic') ? 'is-active' : ''}`}>
                 <FiItalic
                     fontSize={20}
                 />
@@ -72,7 +70,7 @@ const MenuBar = ({ editor }: {
                         .toggleStrike()
                         .run()
                 }
-                className={`rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('strike') ? 'is-active' : ''}`}
+                className={`rounded-md  p-2 m-1  hover:bg-emphasis ${editor.isActive('strike') ? 'is-active' : ''}`}
             >
                 <GrStrikeThrough
                     fontSize={20}
@@ -80,7 +78,7 @@ const MenuBar = ({ editor }: {
             </button>
 
             <button
-                className=" rounded-md p-2 m-1 hover:bg-[#F3F4F6]"
+                className=" rounded-md p-2 m-1 hover:bg-emphasis"
                 onClick={(e) => {
                     e.preventDefault()
                     editor.chain().focus().undo().run()
@@ -98,7 +96,7 @@ const MenuBar = ({ editor }: {
                 />
             </button>
             <button
-                className=" rounded-md p-2 m-1 hover:bg-[#F3F4F6]"
+                className=" rounded-md p-2 m-1 hover:bg-emphasis"
                 onClick={(e) => {
                     e.preventDefault()
                     editor.chain().focus().redo().run()
@@ -121,7 +119,7 @@ const MenuBar = ({ editor }: {
                     e.preventDefault()
                     editor.chain().focus().toggleBulletList().run()
                 }}
-                className={` rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('bulletList') ? 'is-active' : ''}`}
+                className={` rounded-md  p-2 m-1  hover:bg-emphasis ${editor.isActive('bulletList') ? 'is-active' : ''}`}
             >
                 <MdFormatListBulleted
                     fontSize={20}
@@ -132,7 +130,7 @@ const MenuBar = ({ editor }: {
                     e.preventDefault()
                     editor.chain().focus().toggleOrderedList().run()
                 }}
-                className={` rounded-md  p-2 m-1  hover:bg-[#F3F4F6] ${editor.isActive('orderedList') ? 'is-active' : ''}`}
+                className={`rounded-md p-2 m-1 hover:bg-emphasis ${editor.isActive('orderedList') ? 'is-active' : ''}`}
             >
                 <VscListOrdered
                     fontSize={20}
@@ -149,7 +147,7 @@ export default function TipTapEditor({ placeholder }: {
         onUpdate: (text => console.log(text)),
         editorProps: {
             attributes: {
-                class: "focus:outline-none mt-12 p-3 list-disc min-h-full static max-h-full overflow-y-scroll h-full border",
+                class: "focus:outline-none  pl-6 list-disc list-decimal  border placeholder:text-black border-black h-screen overflow-x-hidden min-h-full overflow-y-scroll  scrollbar-thin max-w-full border",
             }
         },
         extensions: [
@@ -162,7 +160,7 @@ export default function TipTapEditor({ placeholder }: {
                 },
                 orderedList: {
                     keepMarks: true,
-                    keepAttributes: false, // TODO : Making this as `false` because marks are not preserved when I try to preserve attrs, awaiting a bit of help
+                    keepAttributes: true, // TODO : Making this as `false` because marks are not preserved when I try to preserve attrs, awaiting a bit of help
                 },
             }),
             BulletList.configure({
@@ -171,21 +169,22 @@ export default function TipTapEditor({ placeholder }: {
                 }
             })
         ],
-        content: `
-    <h1>${placeholder}</h1>
-    `
     })
-    console.log(editor?.getJSON())
+    
+    const options = { placeholder: 'Enter your text here' } as Partial<EditorOptions>
+
+    editor?.setOptions(options)
+
     return (
         <>
             <MenuBar
                 editor={editor}
             />
-            
-                <EditorContent
-                    editor={editor}
-                />
-            
+
+            <EditorContent
+                editor={editor}
+            />
+
         </>
     )
 }

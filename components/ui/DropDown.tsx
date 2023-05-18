@@ -15,7 +15,7 @@ type Props = {
 const DropDown = (props: Props) => {
     return (
         <Select>
-            <SelectTrigger className="w-[90px]">
+            <SelectTrigger className="">
                 <SelectValue placeholder={props.text} />
             </SelectTrigger>
             <SelectContent>

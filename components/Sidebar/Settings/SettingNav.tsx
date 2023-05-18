@@ -1,12 +1,9 @@
 import React, { type ReactNode } from 'react'
 import { useRouter } from 'next/router'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Link from 'next/link'
 
 import { Inter } from 'next/font/google'
-type Props = {
-  children: ReactNode | ReactNode[] | undefined | null
-}
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +14,7 @@ const SettingNav = ({ children }: {
   const router = useRouter();
 
   return (
-    <nav className={`${inter.className} transition-transform scrollbar-thin w-56 px-2 overflow-y-scroll pb-3 max-lg:z-10 lg:flex -translate-x-full opacity-0 lg:translate-x-0 lg:opacity-100 max-h-screen left-0 top-0 text-emphasis bg-muted overflow-x-hidden fixed`}>
+    <nav className={`${inter.className} transition-transform scrollbar-thin min-w-56 px-2 overflow-y-scroll pb-3 max-lg:z-10 lg:flex -translate-x-full opacity-0 lg:translate-x-0 lg:opacity-100 max-h-screen left-0 top-0 text-emphasis bg-muted overflow-x-hidden sticky`}>
       <div className="w-full flex flex-col">
         <button
           onClick={(e) => {
@@ -65,8 +62,8 @@ const SettingNav = ({ children }: {
             </Link>
             <Link
               href={"/settings/my-account/profile"}
-              className={`text-emphasis font-medium text-sm min-h-8 hover:bg-subtle [&[aria-current='page']]:bg-emphasis [&[aria-current='page']]:text-emphasis group-hover:text-default max-w-[156px] group flex flex-row items-center rounded-md px-3 py-[10px] ml-7 max-w-6 mr-5 rtl:ml-5 my-0.5 h-7 false font-inter ${(router.pathname === "/settings/my-account/calender") ? "bg-emphasis" : ""}`}>
-              Calender
+              className={`text-emphasis font-medium text-sm min-h-8 hover:bg-subtle [&[aria-current='page']]:bg-emphasis [&[aria-current='page']]:text-emphasis group-hover:text-default  group flex flex-row items-center rounded-md px-3 py-[10px] ml-7 max-w-6 mr-5 rtl:ml-5 my-0.5 h-7 false font-inter ${(router.pathname === "/settings/my-account/calender") ? "bg-emphasis" : ""}`}>
+              Calendars
             </Link>
             <Link
               href={"/settings/my-account/profile"}

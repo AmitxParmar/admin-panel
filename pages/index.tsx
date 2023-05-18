@@ -71,14 +71,6 @@ export default function Home() {
             <Event />
             <Event />
             <Event />
-            <Event />
-            <Event />
-            <Event />
-            <Event />
-            <Event />
-            <Event />
-            <Event />
-            <Event />
           </ul>
         </div>
       </div>

@@ -1,8 +1,9 @@
 import Image from 'next/image';
-import { Input } from '@/components/ui/input'
+/* import { Input } from '@/components/ui/input' */
+import {Input} from '@/components/AdminPanel/Input';
 import React from 'react'
 import { AiOutlineDelete } from 'react-icons/ai'
-import Menubar from '@/components/Editor/Menubar';
+import QuillEditor from '@/components/Editor/QuillEditor';
 import { Label } from '@/components/ui/label';
 import SettingsWrapper from '@/components/Settings/SettingsWrapper';
 
@@ -14,14 +15,14 @@ const Profile = (props: Props) => {
             <>
                 <div className="flex">
                     <Image
-                        height={25}
-                        width={25}
+                        height={64}
+                        width={64}
                         alt={"Profile Pic"}
-                        className="w-[67px] h-[67px] rounded-full"
+                        className="w-16 h-16 rounded-full"
                         src="https://www.gravatar.com/avatar/fallback?s=160&d=mp&r=PG"
                     />
                     {/* <Button/> */}
-                    <button className="w-[130px] h-9 font-[500] rounded-md border-[1px] my-auto mx-[16px] text-[0.875rem] border-lightgray">
+                    <button className="w-[130px] h-9 font-medium rounded-md border-[1px] my-auto mx-[16px] text-[0.875rem] border-lightgray">
                         Change Avatar
                     </button>
                 </div>
@@ -31,12 +32,10 @@ const Profile = (props: Props) => {
                         Username
                     </h1>
                     <div className="flex rounded-md">
-                        <span className="border-default bg-muted text-subtle hidden h-9 items-center rounded-l-md border border-r-0 px-3 text-sm md:inline-flex">
-                            cal.com/
-                        </span>
+                        <span className="border-default bg-muted text-subtle hidden h-[35] items-center rounded-l-md border border-r-0 px-3 text-sm md:inline-flex">cal.com/</span>
                         <div className='w-full relative'>
                             <Input
-                                className="hover:border-emphasis border-default bg-default placeholder:text-muted text-emphasis disabled:hover:border-default min-h-9 disabled:bg-subtle block py-2 px-3 focus:border-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-800 focus:ring-offset-1 disabled:cursor-not-allowed w-full mb-0 mt-0 rounded-md rounded-l-none font-sans text-sm leading-4 focus:!ring-0 border focus:border border-l-default"
+                                className="hover:border-emphasis border-default bg-default placeholder:text-muted text-emphasis disabled:hover:border-default min-h-9 disabled:bg-subtle block py-2 px-3 focus:border-neutral-300  focus:ring-neutral-800 focus:ring-offset-1 disabled:cursor-not-allowed w-full mb-0 mt-0 rounded-md rounded-l-none font-sans text-sm leading-4 focus:!ring-0 border focus:border border-l-default"
                             />
                         </div>
                     </div>
@@ -67,10 +66,9 @@ const Profile = (props: Props) => {
                 <h1 className="mt-[30px] font-[500] text-[0.875rem] mb-[10px]">
                     About
                 </h1>
-                <div className="h-[96px] ">
-                    <Menubar
-                        placeholder="what not "
-                    />
+                <div className="h-fit scrollbar-thin max-w-[764px] overflow-x-hidden overflow-y-scroll">
+                    <QuillEditor/>
+                    {/* <Menubar placeholder="what not" /> */}
                 </div>
 
                 <div className="border-b border-emphasis">

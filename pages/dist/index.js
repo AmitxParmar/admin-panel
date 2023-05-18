@@ -61,14 +61,6 @@ function Home() {
                     React.createElement(Event_1["default"], null),
                     React.createElement(Event_1["default"], null),
                     React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
-                    React.createElement(Event_1["default"], null),
                     React.createElement(Event_1["default"], null))))));
 }
 exports["default"] = Home;
